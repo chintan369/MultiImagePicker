@@ -1,12 +1,14 @@
 package com.creativechintak.multiimagepicker.builder
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.Fragment
 import com.creativechintak.multiimagepicker.Constants
 import com.creativechintak.multiimagepicker.StartImagePickerActivity
+import com.creativechintak.multiimagepicker.helper.FileUtils
 import java.lang.Exception
 
 class MultiImagePicker {
@@ -86,6 +88,17 @@ class MultiImagePicker {
                     ?: arrayListOf()
             }
             return arrayListOf()
+        }
+
+        fun getImageListAsAbsolutePath(context: Context): ArrayList<String> {
+            val imageUriList = getImageList()
+            val imageAbsPathList = arrayListOf<String>()
+
+            imageUriList.forEach {
+                imageAbsPathList.add(FileUtils.getPath(context,it))
+            }
+
+            return imageAbsPathList
         }
 
     }
