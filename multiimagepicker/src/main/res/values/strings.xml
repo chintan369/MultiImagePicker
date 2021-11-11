@@ -1,1 +1,5 @@
-<resources></resources>
+<resources>
+    <string name="select_photos">Select Photos</string>
+    <string name="title_image_selected">%d selected</string>
+    <string name="select_max_photo_error">You can select max %d photos</string>
+</resources>

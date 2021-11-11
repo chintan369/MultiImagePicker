@@ -2,9 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.creativechintak.multiimagepicker">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application>
         <activity
+            android:name=".GalleryActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            />
+        <activity
             android:name=".StartImagePickerActivity"
+            android:theme="@style/DialogThemeAppCompat"
             android:exported="false" />
     </application>
 
