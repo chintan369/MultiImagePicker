@@ -11,4 +11,18 @@
     android:elevation="4dp"
     android:id="@+id/toolbar">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/menu_gallery_done"
+        android:layout_gravity="end"
+        android:gravity="center"
+        android:textColor="@color/colorMenuGalleryDone"
+        android:textSize="16sp"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:visibility="gone"
+        android:textAllCaps="false"
+        android:id="@+id/btnGalleryPickDone"
+        />
+
 </androidx.appcompat.widget.Toolbar>

@@ -26,18 +26,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/recyclerViewImages"
-        app:layout_constraintEnd_toEndOf="@id/recyclerViewImages"
-        android:layout_margin="20dp"
-        app:fabSize="normal"
-        app:backgroundTint="@color/fab_image_selected"
-        android:src="@drawable/icon_item_selected"
-        android:id="@+id/fabImagesSelected"
-        />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

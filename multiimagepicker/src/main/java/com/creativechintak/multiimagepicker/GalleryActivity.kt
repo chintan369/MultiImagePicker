@@ -9,6 +9,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.creativechintak.multiimagepicker.adapter.ImagesAdapter
@@ -35,8 +36,6 @@ class GalleryActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.fabImagesSelected.hide()
-
         initParams()
         initToolbar()
         initRecyclerView()
@@ -53,6 +52,10 @@ class GalleryActivity : AppCompatActivity() {
                 onBackPressed()
             }
         }
+
+        binding.layoutToolbar.btnGalleryPickDone.setOnClickListener {
+            setSelectedImageResult()
+        }
     }
 
     private fun initRecyclerView() {
@@ -67,10 +70,6 @@ class GalleryActivity : AppCompatActivity() {
             }
         }
         binding.recyclerViewImages.adapter = imagesAdapter
-
-        binding.fabImagesSelected.setOnClickListener {
-            setSelectedImageResult()
-        }
 
         fetchImagesFromDevice()
     }
@@ -150,11 +149,11 @@ class GalleryActivity : AppCompatActivity() {
         val selectedImages = imagesAdapter.getSelectedImageCount()
 
         if(selectedImages > 0){
-            binding.fabImagesSelected.show()
+            binding.layoutToolbar.btnGalleryPickDone.visibility = View.VISIBLE
             binding.layoutToolbar.toolbar.title = getString(R.string.title_image_selected).format(selectedImages)
         }
         else{
-            binding.fabImagesSelected.hide()
+            binding.layoutToolbar.btnGalleryPickDone.visibility = View.GONE
             binding.layoutToolbar.toolbar.title = getString(R.string.select_photos)
         }
     }
