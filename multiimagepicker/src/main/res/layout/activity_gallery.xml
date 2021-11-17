@@ -7,7 +7,7 @@
     android:background="#FFFFFF"
     tools:context=".GalleryActivity">
 
-    <include layout="@layout/layout_common_toolbar"
+    <include layout="@layout/layout_gallery_picker_toolbar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
