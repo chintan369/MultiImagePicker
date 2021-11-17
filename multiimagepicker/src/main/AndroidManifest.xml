@@ -8,11 +8,13 @@
         <activity
             android:name=".GalleryActivity"
             android:exported="false"
+            android:configChanges="orientation"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             />
         <activity
             android:name=".StartImagePickerActivity"
             android:theme="@style/DialogThemeAppCompat"
+            android:configChanges="orientation"
             android:exported="false" />
     </application>
 

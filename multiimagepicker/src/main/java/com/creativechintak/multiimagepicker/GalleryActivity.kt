@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.ContentResolver
 import android.content.ContentUris
 import android.content.Intent
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +26,8 @@ class GalleryActivity : AppCompatActivity() {
 
     private var maxSelectionLimit: Int = 0
     private var showAlbums: Boolean = false
+
+    private lateinit var layoutManager: GridLayoutManager
 
     private lateinit var binding: ActivityGalleryBinding
 
@@ -59,7 +62,8 @@ class GalleryActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        binding.recyclerViewImages.layoutManager = GridLayoutManager(this,resources.getInteger(R.integer.span_count_images))
+        layoutManager = GridLayoutManager(this,resources.getInteger(R.integer.span_count_images))
+        binding.recyclerViewImages.layoutManager = layoutManager
         imagesAdapter = object: ImagesAdapter(this, maxSelectionLimit){
             override fun updateNextButton() {
                 updateFAButtonAndTitle()
@@ -143,6 +147,16 @@ class GalleryActivity : AppCompatActivity() {
 
         return imageList
 
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
+            layoutManager.spanCount = resources.getInteger(R.integer.span_count_images)
+        }
+        else{
+            layoutManager.spanCount = resources.getInteger(R.integer.span_count_images)
+        }
     }
 
     private fun updateFAButtonAndTitle() {
