@@ -107,6 +107,10 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 }
 ```
 
+## Demo
+
+<img src="sampleimages/multiimagepicker-demo.gif" width="420" height="680" />
+
 That's pretty simple to use and enjoy the library!
 
 If you requires more features and customization on this library, Create an issue with title prefix - "Requires feature/customization - ".
