@@ -5,6 +5,8 @@ This library allows to select multiple image selection option in Android to sele
 
 This library provides a simple implementation to call Gallery intent for multiple image selection as well as easy to get the result in Uri list. You can also request the absolute filepath instead of Uri in response.
 
+Demo and Features with Explaination: [https://youtu.be/stjLSTfnDVo](https://youtu.be/stjLSTfnDVo)
+
 ## Add Dependency
 Use Gradle:
 
