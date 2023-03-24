@@ -23,10 +23,6 @@ class StartImagePickerActivity : AppCompatActivity() {
 
                 permissions.add(Manifest.permission.READ_EXTERNAL_STORAGE)
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    permissions.add(Manifest.permission.ACCESS_MEDIA_LOCATION)
-                }
-
                 return permissions.toTypedArray()
             }
 
